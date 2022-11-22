@@ -11,7 +11,7 @@ protocol MovieViewControllerDisplayable: AnyObject {
     func displayMovies(movies: [Movie])
 }
 
-class MovieViewController: UIViewController {
+final class MovieViewController: UIViewController {
 
     private let movieView: MovieView
     private let viewModel: MovieViewModel

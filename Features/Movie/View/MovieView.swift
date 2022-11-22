@@ -7,8 +7,8 @@
 
 import UIKit
 
-class MovieView: UIView {
-    private let tableView: UITableView = {
+final class MovieView: UIView {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
@@ -17,7 +17,7 @@ class MovieView: UIView {
         return tableView
     }()
 
-    private let titleView: UILabel = {
+    private lazy var titleView: UILabel = {
         let label = UILabel()
         label.text = "Filmes Populares"
         label.font = UIFont(name: "SFProDisplay-Bold", size: 28)
@@ -49,7 +49,7 @@ class MovieView: UIView {
         dataSource.movies = movies
     }
 
-    func addBlur() {
+    private func addBlur() {
         let gradientView = GradientViewApp()
         gradientView.frame = bounds
         gradientView.firstColor = UIColor(red: 0.18, green: 0.075, blue: 0.443, alpha: 1.0)
